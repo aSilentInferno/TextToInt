@@ -9,7 +9,7 @@ namespace TextToInt
         {
             numerals = loadNumerals.Numerals;
         }
-        internal static int Convert(string input)
+        public static int Convert(string input)
         {
             //clean up the input
             input = Cleaninput(input);
@@ -21,18 +21,18 @@ namespace TextToInt
             int result = Calculateint(intArray);
             return result;
         }
-        internal static string Cleaninput(string input)
+        private static string Cleaninput(string input)
         {
             //replace hyphens with spaces
             input = input.Replace("-", " ");
             return input;
         }
-        internal static string[] Splitupstring(string input)
+        private static string[] Splitupstring(string input)
         {
             return input.Split(' ');
         }
 
-        internal static int[] Replacewithint(string[] input, Dictionary<string, int> numerals)
+        private static int[] Replacewithint(string[] input, Dictionary<string, int> numerals)
         {
             int[] intArray = new int[input.Length];
             for (int i = 0; i < input.Length; i++)
@@ -50,7 +50,7 @@ namespace TextToInt
             return intArray;
         }
 
-        internal static int Calculateint(int[] intArray)
+        private static int Calculateint(int[] intArray)
         {
             int result = 0;
             /*

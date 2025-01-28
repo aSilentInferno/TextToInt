@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextToInt", "TextToInt\TextToInt.csproj", "{87E3B415-8F85-4BC1-AA7D-7A6D15616451}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextToInt.Test", "TextToInt.Test\TextToInt.Test.csproj", "{4636D157-A351-431D-93F5-9649DCF31383}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{87E3B415-8F85-4BC1-AA7D-7A6D15616451}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87E3B415-8F85-4BC1-AA7D-7A6D15616451}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87E3B415-8F85-4BC1-AA7D-7A6D15616451}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4636D157-A351-431D-93F5-9649DCF31383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4636D157-A351-431D-93F5-9649DCF31383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4636D157-A351-431D-93F5-9649DCF31383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4636D157-A351-431D-93F5-9649DCF31383}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
