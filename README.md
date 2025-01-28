@@ -1,5 +1,5 @@
 # Text to Int
-### a simple c# program to convert written numbers to integers and integers back to written numbers
+### a simple c# program to convert numerals to integers and integers back to numerals
 
 
 Quia debitis ut autem non consequatur aut doloribus. Fugit et accusantium veniam qui voluptas ut suscipit. Natus fugiat pariatur in vel. Doloribus est sed dolor accusantium. Consectetur consequatur tenetur itaque ut.
