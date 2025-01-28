@@ -21,7 +21,7 @@ namespace TextToInt
             {
                 string jsonString = File.ReadAllText(jsonFilePath);
                 //set numerals to the deserialized json or an empty dictionary
-                numerals = JsonSerializer.Deserialize<Dictionary<string, int>>(jsonString) ?? new Dictionary<string, int>();
+                numerals = JsonSerializer.Deserialize<Dictionary<string, int>>(jsonString) ?? [];
                 return numerals;
             }
             catch (FileNotFoundException ex)
@@ -49,7 +49,6 @@ namespace TextToInt
                 Console.WriteLine($"Unexpected error: {ex.Message}");
                 return new Dictionary<string, int>();
             }
-            return numerals;
         }
     }
 }
