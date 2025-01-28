@@ -1,6 +1,9 @@
 # Text to Int
 ### a simple c# program to convert numerals to integers and integers back to numerals
 
+*Note that Numerals refered to numbers written in english like "five" and not roman numerals like "VII"*
+It is currently not planned to add suport for roman numerals
+
 
 Quia debitis ut autem non consequatur aut doloribus. Fugit et accusantium veniam qui voluptas ut suscipit. Natus fugiat pariatur in vel. Doloribus est sed dolor accusantium. Consectetur consequatur tenetur itaque ut.
 
