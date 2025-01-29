@@ -1,15 +1,11 @@
 namespace TextToInt
 {   
     // class to convert numerals to integers
-    static class NumeralsToInteger
+    class NumeralsToInteger(Dictionary<string, int> _numerals)
     {
-        private static Dictionary<string, int> numerals;
+        private readonly Dictionary<string, int> numerals = _numerals;
 
-        public static void Initialize(LoadNumerals loadNumerals)
-        {
-            numerals = loadNumerals.Numerals;
-        }
-        internal static int Convert(string input)
+        public int Convert(string input)
         {
             //clean up the input
             input = Cleaninput(input);
@@ -21,36 +17,38 @@ namespace TextToInt
             int result = Calculateint(intArray);
             return result;
         }
-        internal static string Cleaninput(string input)
+        private static string Cleaninput(string input)
         {
             //replace hyphens with spaces
             input = input.Replace("-", " ");
+            //to lower cass
+            input = input.ToLower();
             return input;
         }
-        internal static string[] Splitupstring(string input)
+        private static string[] Splitupstring(string input)
         {
             return input.Split(' ');
         }
 
-        internal static int[] Replacewithint(string[] input, Dictionary<string, int> numerals)
+        private static int[] Replacewithint(string[] input, Dictionary<string, int> numerals)
         {
             int[] intArray = new int[input.Length];
             for (int i = 0; i < input.Length; i++)
             {
-                if (numerals.ContainsKey(input[i]))
+                if (numerals.TryGetValue(input[i], out int value))
                 {
-                    intArray[i] = numerals[input[i]];
+                    intArray[i] = value;
                 }
                 else
                 {
                     Console.WriteLine($"Error: {input[i]} is not a valid numeral");
-                    return new int[0];
+                    return [];
                 }
             }
             return intArray;
         }
 
-        internal static int Calculateint(int[] intArray)
+        private static int Calculateint(int[] intArray)
         {
             int result = 0;
             /*

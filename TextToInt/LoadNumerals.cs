@@ -2,52 +2,48 @@ using System.Text.Json;
 
 namespace TextToInt
 {
-    public class LoadNumerals
+    static class LoadNumerals
     {
-        public LoadNumerals(string? jsonFilePath = null)
+        public static Dictionary<string, int>? Numerals { get; private set; }
+        public static void LoadNumeralsFromJson(string? jsonFilePath = null)
         {
             jsonFilePath ??= "numerals.json";   
-            numerals = LoadNumeralsFromJson(jsonFilePath);
+            Numerals = LoadFromJson(jsonFilePath);
         }
 
-        private Dictionary<string, int> numerals;
-
-        public Dictionary<string, int> Numerals => numerals;
-
-        private Dictionary<string, int> LoadNumeralsFromJson(string jsonFilePath)
+        private static Dictionary<string, int> LoadFromJson(string jsonFilePath)
         {
-            
             try
             {
                 string jsonString = File.ReadAllText(jsonFilePath);
                 //set numerals to the deserialized json or an empty dictionary
-                numerals = JsonSerializer.Deserialize<Dictionary<string, int>>(jsonString) ?? [];
-                return numerals;
+                Numerals = JsonSerializer.Deserialize<Dictionary<string, int>>(jsonString) ?? [];
+                return Numerals;
             }
             catch (FileNotFoundException ex)
             {
                 Console.WriteLine($"File not found: {ex.Message}");
-                return new Dictionary<string, int>();
+                return [];
             }
             catch (UnauthorizedAccessException ex)
             {
                 Console.WriteLine($"Access denied: {ex.Message}");
-                return new Dictionary<string, int>();
+                return [];
             }
             catch (IOException ex)
             {
                 Console.WriteLine($"I/O error: {ex.Message}");
-                return new Dictionary<string, int>();
+                return [];
             }
             catch (JsonException ex)
             {
                 Console.WriteLine($"JSON error: {ex.Message}");
-                return new Dictionary<string, int>();
+                return [];
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Unexpected error: {ex.Message}");
-                return new Dictionary<string, int>();
+                return [];
             }
         }
     }
