@@ -73,7 +73,9 @@ namespace TextToInt
             {
                 if (i < intArray.Length - 1 && intArray[i] < intArray[i + 1])
                 {
-                    intArray[i] = intArray[i] * intArray[i + 1];
+                    result += intArray[i] * intArray[i + 1];
+                    //skip the next number since it was already added
+                    i++;
                 }
                 else if (i < intArray.Length - 1 && intArray[i] == intArray[i + 1])
                 {
