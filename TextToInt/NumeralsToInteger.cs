@@ -1,15 +1,11 @@
 namespace TextToInt
 {   
     // class to convert numerals to integers
-    static class NumeralsToInteger
+    class NumeralsToInteger(Dictionary<string, int> _numerals)
     {
-        private static Dictionary<string, int> numerals;
+        private readonly Dictionary<string, int> numerals = _numerals;
 
-        public static void Initialize(LoadNumerals loadNumerals)
-        {
-            numerals = loadNumerals.Numerals;
-        }
-        public static int Convert(string input)
+        public int Convert(string input)
         {
             //clean up the input
             input = Cleaninput(input);
@@ -25,6 +21,8 @@ namespace TextToInt
         {
             //replace hyphens with spaces
             input = input.Replace("-", " ");
+            //to lower cass
+            input = input.ToLower();
             return input;
         }
         private static string[] Splitupstring(string input)
@@ -37,14 +35,14 @@ namespace TextToInt
             int[] intArray = new int[input.Length];
             for (int i = 0; i < input.Length; i++)
             {
-                if (numerals.ContainsKey(input[i]))
+                if (numerals.TryGetValue(input[i], out int value))
                 {
-                    intArray[i] = numerals[input[i]];
+                    intArray[i] = value;
                 }
                 else
                 {
                     Console.WriteLine($"Error: {input[i]} is not a valid numeral");
-                    return new int[0];
+                    return [];
                 }
             }
             return intArray;
