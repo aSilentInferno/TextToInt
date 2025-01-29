@@ -20,7 +20,7 @@ public class NumeralsToIntegerTest
         // Act
         int output = NumeToInt.Convert(input);
         // Assert
-        Assert.Equal(output, expected);
+        Assert.Equal(expected, output);
     }
     [Fact]
     public void Convert_SingeWordMultipleDigits()
@@ -32,7 +32,7 @@ public class NumeralsToIntegerTest
         // Act
         int output = NumeToInt.Convert(input);
         // Assert
-        Assert.Equal(output, expected);
+        Assert.Equal(expected, output);
     }
     [Fact]
     public void Convert_WithHpyhen()
@@ -44,7 +44,7 @@ public class NumeralsToIntegerTest
         // Act
         int output = NumeToInt.Convert(input);
         // Assert
-        Assert.Equal(output, expected);
+        Assert.Equal(expected, output);
     }
     [Fact]
     public void Convet_BiggerNumber()
@@ -56,7 +56,7 @@ public class NumeralsToIntegerTest
         // Act
         int output = NumeToInt.Convert(input);
         // Assert
-        Assert.Equal(output, expected);
+        Assert.Equal(expected, output);
     }
     [Fact]
     public void Convert_InvalidNumeral()
@@ -68,7 +68,7 @@ public class NumeralsToIntegerTest
         // Act
         int output = NumeToInt.Convert(input);
         // Assert
-        Assert.Equal(output, expected);
+        Assert.Equal(expected, output);
     }
     [Fact]
     public void Convert_RepeatedNumeral()
@@ -80,7 +80,7 @@ public class NumeralsToIntegerTest
         // Act
         int output = NumeToInt.Convert(input);
         // Assert
-        Assert.Equal(output, expected);
+        Assert.Equal(expected, output);
     }
     [Fact]
     public void Convert_WeirdNumber()
@@ -94,6 +94,6 @@ public class NumeralsToIntegerTest
         int output = NumeToInt.Convert(input);
 
         // Assert
-        Assert.Equal(output, expected);
+        Assert.Equal(expected, output);
     }
 }
