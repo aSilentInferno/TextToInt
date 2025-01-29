@@ -1,9 +1,15 @@
+using Microsoft.VisualStudio.TestPlatform.TestHost;
 using TextToInt;
 
 namespace TextToInt.Test;
     
 public class NumeralsToIntegerTest
 {
+    private readonly NumeralsToInteger NumeToInt;
+    public NumeralsToIntegerTest(){
+        Dictionary<string, int> numerals = Program.LoadNumeralsFromJson();
+        NumeToInt = new(numerals);
+    }
 
     [Fact]
     public void Convert_SingleNumeral()
@@ -13,7 +19,7 @@ public class NumeralsToIntegerTest
         int expected = 5;
         
         // Act
-        int output = NumeralsToInteger.Convert(input);
+        int output = NumeToInt.Convert(input);
         // Assert
         Assert.Equal(output, expected);
     }
@@ -25,7 +31,7 @@ public class NumeralsToIntegerTest
         int expected = 12;
 
         // Act
-        int output = NumeralsToInteger.Convert(input);
+        int output = NumeToInt.Convert(input);
         // Assert
         Assert.Equal(output, expected);
     }
@@ -37,7 +43,7 @@ public class NumeralsToIntegerTest
         int expected = 25;
         
         // Act
-        int output = NumeralsToInteger.Convert(input);
+        int output = NumeToInt.Convert(input);
         // Assert
         Assert.Equal(output, expected);
     }
@@ -49,7 +55,7 @@ public class NumeralsToIntegerTest
         int expected = 525;
 
         // Act
-        int output = NumeralsToInteger.Convert(input);
+        int output = NumeToInt.Convert(input);
         // Assert
         Assert.Equal(output, expected);
     }
@@ -61,7 +67,7 @@ public class NumeralsToIntegerTest
         int? expected = null;
 
         // Act
-        int output = NumeralsToInteger.Convert(input);
+        int output = NumeToInt.Convert(input);
         // Assert
         Assert.Equal(output, expected);
     }
@@ -73,7 +79,7 @@ public class NumeralsToIntegerTest
         int? expected = null;
 
         // Act
-        int output = NumeralsToInteger.Convert(input);
+        int output = NumeToInt.Convert(input);
         // Assert
         Assert.Equal(output, expected);
     }
@@ -85,7 +91,7 @@ public class NumeralsToIntegerTest
         int expected = 1225;
 
         // Act
-        int output = NumeralsToInteger.Convert(input);
+        int output = NumeToInt.Convert(input);
 
         // Assert
         Assert.Equal(output, expected);

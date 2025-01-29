@@ -1,10 +1,22 @@
 namespace TextToInt
 {   
     // class to convert numerals to integers
-    class NumeralsToInteger(Dictionary<string, int> _numerals)
+    public class NumeralsToInteger(Dictionary<string, int> _numerals)
     {
         private readonly Dictionary<string, int> numerals = _numerals;
 
+        /// <summary>
+        /// Converts a string representation of numerals to its integer value.
+        /// </summary>
+        /// <param name="input">The string input containing numerals to be converted.</param>
+        /// <returns>The integer value of the input numerals.</returns>
+        /// <remarks>
+        /// The method performs the following steps:
+        /// 1. Cleans up the input string.
+        /// 2. Splits the input string into an array of substrings.
+        /// 3. Replaces the substrings with their corresponding integer values.
+        /// 4. Calculates the final integer value from the array of integers.
+        /// </remarks>
         public int Convert(string input)
         {
             //clean up the input
@@ -42,7 +54,7 @@ namespace TextToInt
                 else
                 {
                     Console.WriteLine($"Error: {input[i]} is not a valid numeral");
-                    return [];
+                    throw new ArgumentException($"Error: {input[i]} is not a valid numeral");
                 }
             }
             return intArray;
@@ -59,11 +71,11 @@ namespace TextToInt
             */
             for (int i = 0; i < intArray.Length; i++)
             {
-                if (intArray[i] < intArray[i + 1])
+                if (i < intArray.Length - 1 && intArray[i] < intArray[i + 1])
                 {
                     intArray[i] = intArray[i] * intArray[i + 1];
                 }
-                else if (intArray[i] == intArray[i + 1])
+                else if (i < intArray.Length - 1 && intArray[i] == intArray[i + 1])
                 {
                     throw new ArgumentException("Error: two of the same number in a row");
                 }
