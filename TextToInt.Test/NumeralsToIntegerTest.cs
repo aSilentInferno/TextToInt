@@ -54,5 +54,29 @@ public class NumeralsToIntegerTest
         // Assert
         Assert.Equal(output, expected);
     }
-   
+   [Fact]
+    public void Convert_RepeatedNumeral()
+    {
+        // Arrange
+        string input = "five five";
+        int? expected = null;
+
+        // Act
+        int output = NumeralsToInteger.Convert(input);
+        // Assert
+        Assert.Equal(output, expected);
+    }
+    [Fact]
+    public void Convert_WeirdNumber(){
+        
+        // Arrange
+        string input = "twelve hundred twenty-five";
+        int expected = 1225;
+
+        // Act
+        int output = NumeralsToInteger.Convert(input);
+
+        // Assert
+        Assert.Equal(output, expected);
+    }
 }
