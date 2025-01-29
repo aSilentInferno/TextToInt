@@ -1,5 +1,5 @@
 namespace TextToInt
-{   
+{
     // class to convert numerals to integers
     public class NumeralsToInteger(Dictionary<string, int> _numerals)
     {

@@ -1,12 +1,11 @@
-using Microsoft.VisualStudio.TestPlatform.TestHost;
-using TextToInt;
 
 namespace TextToInt.Test;
-    
+
 public class NumeralsToIntegerTest
 {
     private readonly NumeralsToInteger NumeToInt;
-    public NumeralsToIntegerTest(){
+    public NumeralsToIntegerTest()
+    {
         Dictionary<string, int> numerals = Program.LoadNumeralsFromJson();
         NumeToInt = new(numerals);
     }
@@ -17,7 +16,7 @@ public class NumeralsToIntegerTest
         // Arrange
         string input = "five";
         int expected = 5;
-        
+
         // Act
         int output = NumeToInt.Convert(input);
         // Assert
@@ -41,7 +40,7 @@ public class NumeralsToIntegerTest
         // Arrange
         string input = "twenty-five";
         int expected = 25;
-        
+
         // Act
         int output = NumeToInt.Convert(input);
         // Assert
@@ -71,7 +70,7 @@ public class NumeralsToIntegerTest
         // Assert
         Assert.Equal(output, expected);
     }
-   [Fact]
+    [Fact]
     public void Convert_RepeatedNumeral()
     {
         // Arrange
@@ -84,8 +83,9 @@ public class NumeralsToIntegerTest
         Assert.Equal(output, expected);
     }
     [Fact]
-    public void Convert_WeirdNumber(){
-        
+    public void Convert_WeirdNumber()
+    {
+
         // Arrange
         string input = "twelve hundred twenty-five";
         int expected = 1225;
