@@ -2,7 +2,7 @@ using System.Text.Json;
 
 namespace TextToInt;
 
-static class Program
+public static class Program
 {
     public static void Main(String[] args)
     {
@@ -46,7 +46,7 @@ static class Program
         throw new NotImplementedException();
     }
 
-    private static Dictionary<string, int> LoadNumeralsFromJson(string jsonFilePath = "numerals.json")
+    public static Dictionary<string, int> LoadNumeralsFromJson(string jsonFilePath = "Numerals.json")
         {
             Dictionary<string, int> Numerals;
             
