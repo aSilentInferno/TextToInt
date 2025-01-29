@@ -1,3 +1,5 @@
+using System.Text.RegularExpressions;
+
 namespace TextToInt
 {
     // class to convert numerals to integers
