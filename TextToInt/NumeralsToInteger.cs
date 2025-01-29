@@ -33,6 +33,8 @@ namespace TextToInt
         {
             //replace hyphens with spaces
             input = input.Replace("-", " ");
+            //remove any non letter characters
+            input = Regex.Replace(input, "[^a-zA-Z]", "");
             //to lower cass
             input = input.ToLower();
             return input;

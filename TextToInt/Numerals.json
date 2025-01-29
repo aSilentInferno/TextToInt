@@ -30,5 +30,6 @@
     "thousand": 1000,
     "ten thousand": 10000,
     "hundred thousand": 100000,
-    "million": 1000000
+    "million": 1000000,
+    "billion": 1000000000
 }
