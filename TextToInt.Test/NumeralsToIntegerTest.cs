@@ -17,7 +17,18 @@ public class NumeralsToIntegerTest
         // Assert
         Assert.Equal(output, expected);
     }
+    [Fact]
+    public void Convert_SingeWordMultipleDigits()
+    {
+        // Arrange
+        string input = "twelve";
+        int expected = 12;
 
+        // Act
+        int output = NumeralsToInteger.Convert(input);
+        // Assert
+        Assert.Equal(output, expected);
+    }
     [Fact]
     public void Convert_WithHpyhen()
     {
